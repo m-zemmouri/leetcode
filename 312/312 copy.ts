@@ -1,4 +1,4 @@
-function maxCoins0(nums: number[]): number {
+function maxCoins1(nums: number[]): number {
 	if (!nums?.length) return 0
 	// Declar cache
 	let cache = new Map<string, number>()
