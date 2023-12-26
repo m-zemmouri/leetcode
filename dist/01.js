@@ -36,4 +36,7 @@ function maxCoins0(nums) {
     recurse(1);
     return dp[0][nums.length - 1];
 }
+const nums0 = [1, 5];
+const v0 = maxCoins0(nums0);
+console.log(v);
 //# sourceMappingURL=01.js.map

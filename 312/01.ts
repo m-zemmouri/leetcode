@@ -41,3 +41,8 @@ function maxCoins0(nums: number[]): number {
 
 	return dp[0][nums.length - 1]
 }
+
+const nums0 = [1, 5]
+
+const v0 = maxCoins0(nums0)
+console.log(v)
