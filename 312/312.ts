@@ -4,12 +4,12 @@ function maxCoins(nums: number[]): number {
 	let cache = new Map<number, number>()
 	// Add default value 1
 	nums = [1, ...nums, 1]
-
+	const n = nums.length
 	return Coins(0, nums.length)
 
 	function Coins(start: number, end: number): number {
 		if (end - start < 3) return 0
-		const key = start + 301 * end // start < 301
+		const key = start + n * (end - start) // start < end < n
 		// get val from cache or compute it
 		let val = cache.get(key)
 		if (val === undefined) {
