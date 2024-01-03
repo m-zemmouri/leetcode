@@ -16,12 +16,7 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
 				mid2_inNum1 = false
 				continue
 			}
-			if (j === l2) {
-				i++
-				mid2_inNum1 = true
-				continue
-			}
-			if (nums1[i] < nums2[j]) {
+			if (j === l2 || nums1[i] < nums2[j]) {
 				i++
 				mid2_inNum1 = true
 			} else {
@@ -40,12 +35,7 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
 			mid2_inNum1 = false
 			continue
 		}
-		if (j === l2) {
-			i++
-			mid2_inNum1 = true
-			continue
-		}
-		if (nums1[i] < nums2[j]) {
+		if (j === l2 || nums1[i] < nums2[j]) {
 			i++
 			mid2_inNum1 = true
 		} else {
@@ -53,8 +43,9 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
 			mid2_inNum1 = false
 		}
 	}
-	const index: number = mid1_inNum1 == mid2_inNum1 ? 1 : 0
-	const v1 = mid1_inNum1 ? nums1[i - 1 - index] : nums2[j - 1 - index]
-	const v2 = mid2_inNum1 ? nums1[i - 1] : nums2[j - 1]
-	return (v1 + v2) / 2
+	i--
+	j--
+	if (mid1_inNum1 != mid2_inNum1) return (nums1[i] + nums2[j]) / 2
+	if (mid1_inNum1) return (nums1[i - 1] + nums1[i]) / 2
+	return (nums2[j - 1] + nums2[j]) / 2
 }
