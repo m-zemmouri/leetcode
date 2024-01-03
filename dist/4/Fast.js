@@ -2,33 +2,62 @@
 function findMedianSortedArrays(nums1, nums2) {
     const l1 = nums1.length;
     const l2 = nums2.length;
-    const max1 = nums1[l1 - 1];
-    const max2 = nums2[l2 - 1];
-    let merged = [];
-    let i = 0, j = 0;
-    while (i < l1 && j < l2) {
-        if (max1 <= nums2[j]) {
-            merged.push(...nums1.slice(i));
-            i = l1;
-            break;
+    const l3 = l1 + l2;
+    let i = 0;
+    let j = 0;
+    let k = 0;
+    const mid = Math.ceil(l3 / 2);
+    let mid_inNum1 = false;
+    if (l3 % 2) {
+        while (k < mid) {
+            k++;
+            if (i === l1) {
+                j++;
+                mid_inNum1 = false;
+                continue;
+            }
+            if (j === l2) {
+                i++;
+                mid_inNum1 = true;
+                continue;
+            }
+            if (nums1[i] < nums2[j]) {
+                i++;
+                mid_inNum1 = true;
+            }
+            else {
+                j++;
+                mid_inNum1 = false;
+            }
         }
-        if (max2 <= nums2[i]) {
-            merged.push(...nums2.slice(j));
-            j = l2;
-            break;
+        return mid_inNum1 ? nums1[i - 1] : nums2[j - 1];
+    }
+    let mid1_inNum1 = false;
+    while (k <= mid) {
+        mid1_inNum1 = mid_inNum1;
+        k++;
+        if (i === l1) {
+            j++;
+            mid_inNum1 = false;
+            continue;
+        }
+        if (j === l2) {
+            i++;
+            mid_inNum1 = true;
+            continue;
         }
         if (nums1[i] < nums2[j]) {
-            merged.push(nums1[i++]);
+            i++;
+            mid_inNum1 = true;
         }
-        else
-            merged.push(nums2[j++]);
+        else {
+            j++;
+            mid_inNum1 = false;
+        }
     }
-    let l = merged.push(...nums1.slice(i), ...nums2.slice(j));
-    let mid = Math.floor(l / 2);
-    if (l % 2 === 0)
-        return (merged[mid - 1] + merged[mid]) / 2;
-    else
-        return merged[mid];
+    const v1 = mid1_inNum1 ? nums1[i - 1] : nums2[j - 1];
+    const v2 = mid_inNum1 ? nums1[i - 1] : nums2[j - 1];
+    return (v1 + v2) / 2;
 }
-findMedianSortedArrays([1, 3], [2]);
+findMedianSortedArrays([], [2, 3]);
 //# sourceMappingURL=Fast.js.map
