@@ -1,4 +1,4 @@
-function maxCoins(nums: number[]): number {
+function maxCoins_Clear(nums: number[]): number {
 	if (!nums?.length) return 0
 	// Declar cache
 	let cache = new Map<number, number>()
