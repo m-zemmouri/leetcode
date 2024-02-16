@@ -21,6 +21,7 @@ function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
 		current_index = 0
 		for (let i = 0; i < lists.length; i++) {
 			if (lists[i] === null) continue
+			// @ts-ignore
 			if (lists[current_index] == null || lists[i].val < lists[current_index].val) {
 				current_index = i
 			}
@@ -31,6 +32,7 @@ function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
 			last.next = lists[current_index]
 			last = last.next
 		}
+		// @ts-ignore
 		lists[current_index] = lists[current_index].next
 		if (lists[current_index] == undefined) lists = lists.splice(current_index, 1)
 	}
