@@ -1,4 +1,4 @@
-function reverse_Integer(x: number): number {
+export function reverse(x: number): number {
 	const isNegative = x < 0
 	let reversed = Math.abs(x).toString().split('').reverse().join('')
 	let result = parseInt(reversed) * (isNegative ? -1 : 1)

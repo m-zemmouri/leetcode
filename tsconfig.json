@@ -1,9 +1,21 @@
 {
+	"version": "0.2.0",
 	"compilerOptions": {
 		"target": "ESNext",
 		"outDir": "dist",
 		"strict": true,
 		"esModuleInterop": true,
 		"sourceMap": true
-	}
+	},
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Program",
+			"program": "${workspaceFolder}/dist/index.js", // Adjust the path as needed
+			"preLaunchTask": "tsc: build - tsconfig.json",
+			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
+			"console": "integratedTerminal"
+		}
+	]
 }

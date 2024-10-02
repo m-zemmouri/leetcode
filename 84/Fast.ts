@@ -1,8 +1,8 @@
-function largestRectangleArea(heights: number[]): number {
+export function largestRectangleArea(heights: number[]): number {
 	if (!heights?.length) return 0
 	const len: number = heights.length
 	let result: number = 0
-	
+
 	const cache: number[][] = Array.from({ length: len }, (_, index) => {
 		const height = heights[index]
 		result = Math.max(result, height)
@@ -21,6 +21,3 @@ function largestRectangleArea(heights: number[]): number {
 	}
 	return result
 }
-let h = [2, 1, 5]
-let v = largestRectangleArea(h)
-console.log(v)

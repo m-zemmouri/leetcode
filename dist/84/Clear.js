@@ -1,5 +1,4 @@
-"use strict";
-function largestRectangleArea_Clear(heights) {
+export function largestRectangleArea(heights) {
     if (!heights?.length)
         return 0;
     const len = heights.length;
@@ -14,7 +13,7 @@ function largestRectangleArea_Clear(heights) {
     }
     return result;
 }
-let h0 = [2, 4];
-let v0 = largestRectangleArea_Clear(h0);
-console.log(v0);
+// let h0 = [2, 4]
+// let v0 = largestRectangleArea_Clear(h0)
+// console.log(v0)
 //# sourceMappingURL=Clear.js.map

@@ -1,4 +1,4 @@
-function largestRectangleArea_Clear(heights: number[]): number {
+export function largestRectangleArea(heights: number[]): number {
 	if (!heights?.length) return 0
 	const len: number = heights.length
 	let result: number = 0
@@ -13,6 +13,6 @@ function largestRectangleArea_Clear(heights: number[]): number {
 	}
 	return result
 }
-let h0 = [2, 4]
-let v0 = largestRectangleArea_Clear(h0)
-console.log(v0)
+// let h0 = [2, 4]
+// let v0 = largestRectangleArea_Clear(h0)
+// console.log(v0)

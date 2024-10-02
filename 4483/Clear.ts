@@ -1,7 +1,7 @@
 /**
  Do not return anything, modify nums in-place instead.
  */
-function sortColors(nums: number[]): void {
+export function sortColors(nums: number[]): void {
 	const n = nums.length
 	let n0 = 0,
 		n1 = 0,
@@ -16,6 +16,6 @@ function sortColors(nums: number[]): void {
 	while (i > n0) nums[--i] = 1
 	while (i > 0) nums[--i] = 0
 }
-let nums = [2, 0, 2, 1, 1, 0]
-sortColors(nums)
-console.log(nums)
+// let nums = [2, 0, 2, 1, 1, 0]
+// sortColors(nums)
+// console.log(nums)

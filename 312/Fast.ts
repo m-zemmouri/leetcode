@@ -1,4 +1,4 @@
-function maxCoins(nums: number[]): number {
+function maxCoins_Fast(nums: number[]): number {
 	if (!nums?.length) return 0
 	// Add default value 1
 	nums = [1, ...nums, 1]

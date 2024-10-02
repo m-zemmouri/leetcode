@@ -10,7 +10,7 @@ class ListNode {
 	}
 }
 
-function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
+export function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
 	if (!lists?.length) return null
 
 	const head: ListNode | null = new ListNode()

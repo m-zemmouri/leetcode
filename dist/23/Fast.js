@@ -1,4 +1,3 @@
-"use strict";
 /**
  * Definition for singly-linked list.
  * */
@@ -10,7 +9,7 @@ class ListNode {
         this.next = next === undefined ? null : next;
     }
 }
-function mergeKLists(lists) {
+export function mergeKLists(lists) {
     if (!lists?.length)
         return null;
     const head = new ListNode();

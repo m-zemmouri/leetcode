@@ -1,5 +1,4 @@
-"use strict";
-function findMedianSortedArrays(nums1, nums2) {
+export function findMedianSortedArrays(nums1, nums2) {
     const l1 = nums1.length;
     const l2 = nums2.length;
     const l3 = l1 + l2;

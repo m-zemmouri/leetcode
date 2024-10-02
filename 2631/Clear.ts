@@ -1,3 +1,5 @@
+export {}
+
 declare global {
 	interface Array<T> {
 		groupBy(fn: (item: T) => string): Record<string, T[]>

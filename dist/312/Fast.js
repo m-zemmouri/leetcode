@@ -1,5 +1,5 @@
 "use strict";
-function maxCoins(nums) {
+function maxCoins_Fast(nums) {
     if (!nums?.length)
         return 0;
     // Add default value 1

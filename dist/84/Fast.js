@@ -1,5 +1,4 @@
-"use strict";
-function largestRectangleArea(heights) {
+export function largestRectangleArea(heights) {
     if (!heights?.length)
         return 0;
     const len = heights.length;
@@ -21,7 +20,4 @@ function largestRectangleArea(heights) {
     }
     return result;
 }
-let h = [2, 1, 5];
-let v = largestRectangleArea(h);
-console.log(v);
 //# sourceMappingURL=Fast.js.map

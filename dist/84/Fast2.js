@@ -1,5 +1,4 @@
-"use strict";
-function largestRectangleArea2(heights) {
+export function largestRectangleArea(heights) {
     if (!heights?.length)
         return 0;
     let len = heights.length;
@@ -21,7 +20,7 @@ function largestRectangleArea2(heights) {
     }
     return result;
 }
-let h2 = [2, 1, 5, 6, 2, 3];
-let v2 = largestRectangleArea2(h2);
-console.log(v2);
+// let h2 = [2, 1, 5, 6, 2, 3]
+// let v2 = largestRectangleArea_Fast2(h2)
+// console.log(v2)
 //# sourceMappingURL=Fast2.js.map

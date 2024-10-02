@@ -1,4 +1,4 @@
-function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
+export function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
 	const l1 = nums1.length
 	const l2 = nums2.length
 	const l3 = l1 + l2
